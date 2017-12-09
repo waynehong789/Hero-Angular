@@ -18,6 +18,26 @@
 </div>
 
 <div>
+  <table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Hero Name</th>
+            <th>Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let hero of heroes">
+            <td >{{ hero.id }}</td>
+            <td >{{ hero.name }}</td>
+            <td class="del"><button class="delete"
+              (click)="delete(hero); $event.stopPropagation()">Delete</button></td>
+        </tr>
+    </tbody>
+  </table>
+</div>
+
+<div>
   <label>Hero name:</label> <input #heroName />
   <button (click)="add(heroName.value); heroName.value=''">
     Add

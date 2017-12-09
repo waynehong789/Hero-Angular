@@ -29,7 +29,7 @@ export class HeroesComponent implements OnInit {
 
     
   getHeroes(): void {
-    this.heroService.getHeroesSlowly().then(data => this.heroes = data);
+    this.heroService.getHeroes().then(data => this.heroes = data);
   }
 
   onSelect(hero:Hero):void{
